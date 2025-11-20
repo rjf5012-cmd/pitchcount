@@ -114,30 +114,78 @@
     }
 
     button {
-      width: 100%;
-      margin-top: 4px;
       padding: 11px 14px;
       border-radius: 999px;
       border: none;
-      background: linear-gradient(135deg, #2ecc71, #27ae60);
-      color: #02120a;
       font-weight: 600;
       font-size: 0.98rem;
       cursor: pointer;
-      box-shadow: 0 12px 30px rgba(46, 204, 113, 0.45);
       transform: translateY(0);
-      transition: transform 0.12s, box-shadow 0.12s, filter 0.12s;
+      transition: transform 0.12s, box-shadow 0.12s, filter 0.12s, background 0.12s, color 0.12s;
     }
 
-    button:hover {
+    .btn-primary {
+      width: 100%;
+      margin-top: 4px;
+      background: linear-gradient(135deg, #2ecc71, #27ae60);
+      color: #02120a;
+      box-shadow: 0 12px 30px rgba(46, 204, 113, 0.45);
+    }
+
+    .btn-primary:hover {
       transform: translateY(-1px);
       box-shadow: 0 16px 40px rgba(46, 204, 113, 0.6);
       filter: brightness(1.03);
     }
 
-    button:active {
+    .btn-primary:active {
       transform: translateY(0);
       box-shadow: 0 10px 26px rgba(46, 204, 113, 0.4);
+    }
+
+    /* New share button styling */
+    .share-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      margin-top: 14px;
+    }
+
+    .btn-share {
+      background: #0b1522;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding-inline: 16px;
+    }
+
+    .btn-share:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+      background: #0f1927;
+      color: var(--text);
+    }
+
+    .btn-share span.icon {
+      font-size: 1.1rem;
+    }
+
+    .share-status {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .share-status.success {
+      color: #7bd88f;
+    }
+
+    .share-status.error {
+      color: var(--error);
     }
 
     .result-header {
@@ -381,7 +429,7 @@
           <input type="date" id="gameDate" />
         </div>
 
-        <button type="submit">Calculate safe pitch usage</button>
+        <button type="submit" class="btn-primary">Calculate safe pitch usage</button>
         <div id="error" class="error" style="display:none;"></div>
       </form>
 
@@ -416,6 +464,15 @@
           This calculator uses common Little League style pitch count and rest rules for youth pitchers.
           Always follow your league&rsquo;s official rules and any guidance from medical professionals.
         </small>
+
+        <!-- New share section -->
+        <div class="share-row">
+          <button type="button" id="shareBtn" class="btn-share">
+            <span class="icon">📤</span>
+            <span>Share this with your league</span>
+          </button>
+          <span id="shareStatus" class="share-status"></span>
+        </div>
       </section>
 
       <div class="ad-slot">
@@ -592,12 +649,49 @@
       document.getElementById("results").style.display = "block";
     }
 
-    // Set default game date to today
+    // Share logic
+    async function handleShare() {
+      const shareStatus = document.getElementById("shareStatus");
+      shareStatus.textContent = "";
+      shareStatus.className = "share-status";
+
+      const url = window.location.href;
+      const title = "Youth Baseball Pitch Count Calculator";
+      const text = "Check out this simple youth baseball pitch count & rest day calculator for our league:";
+
+      try {
+        if (navigator.share) {
+          await navigator.share({ title, text, url });
+          shareStatus.textContent = "Link opened in your share menu.";
+          shareStatus.classList.add("success");
+        } else if (navigator.clipboard && navigator.clipboard.writeText) {
+          await navigator.clipboard.writeText(url);
+          shareStatus.textContent = "Link copied to clipboard. Paste it into your league chat or email.";
+          shareStatus.classList.add("success");
+        } else {
+          // Fallback: prompt user to copy manually
+          window.prompt("Copy this link and share it with your league:", url);
+          shareStatus.textContent = "Link ready to share.";
+          shareStatus.classList.add("success");
+        }
+      } catch (err) {
+        console.error(err);
+        shareStatus.textContent = "Could not share the link. Try copying the URL from your browser.";
+        shareStatus.classList.add("error");
+      }
+    }
+
+    // Set default game date to today and hook up share button
     (function init() {
       const gameDate = document.getElementById("gameDate");
       const today = new Date();
       const iso = today.toISOString().slice(0, 10);
       gameDate.value = iso;
+
+      const shareBtn = document.getElementById("shareBtn");
+      if (shareBtn) {
+        shareBtn.addEventListener("click", handleShare);
+      }
     })();
   </script>
 </body>
