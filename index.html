@@ -2,8 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8509398148166447"
-     crossorigin="anonymous"></script>
+
+  <!-- Google AdSense Verification -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8509398148166447"
+       crossorigin="anonymous"></script>
+
   <!-- Primary SEO -->
   <title>Youth Baseball Pitch Count Calculator | PitchCountCalculator.com</title>
   <meta name="description" content="Free youth baseball pitch count calculator that shows max pitches per game and required days of rest based on age and common Little League style pitch count rules. Protect young arms with a simple pitch count and rest day tool." />
@@ -21,7 +24,6 @@
   <meta property="og:url" content="https://pitchcountcalculator.com/" />
   <meta property="og:description" content="Quickly calculate safe pitch counts and required rest days for youth baseball pitchers, based on age and common Little League style guidelines." />
   <meta property="og:image" content="https://pitchcountcalculator.com/og-image.png" />
-  <meta property="og:locale" content="en_US" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
@@ -29,770 +31,357 @@
   <meta name="twitter:description" content="Simple youth baseball pitch count & rest day calculator. Help protect young arms with clear pitching limits and rest rules." />
   <meta name="twitter:image" content="https://pitchcountcalculator.com/og-image.png" />
 
-  <!-- Optional: fill this with your verification when you have it -->
-  <!-- <meta name="google-site-verification" content="YOUR_CODE_HERE" /> -->
-
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-  <style>
-    :root {
-      --bg: #0b1724;
-      --card: #101c2b;
-      --accent: #2ecc71;
-      --accent-soft: rgba(46, 204, 113, 0.15);
-      --text: #f5f7fb;
-      --muted: #a3b3cc;
-      --border: #1f2a3a;
-      --error: #ff6b6b;
-      --shadow: 0 18px 45px rgba(0, 0, 0, 0.55);
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #18283e, #050910 55%);
-      color: var(--text);
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 960px;
-      display: grid;
-      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
-      gap: 24px;
-      align-items: stretch;
-    }
-
-    @media (max-width: 800px) {
-      body {
-        align-items: flex-start;
-      }
-      .container {
-        grid-template-columns: 1fr;
-        margin-top: 24px;
-      }
-    }
-
-    .card {
-      background: var(--card);
-      border-radius: 18px;
-      padding: 24px 22px;
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-    }
-
-    h1 {
-      font-size: 1.8rem;
-      margin: 0 0 8px;
-      letter-spacing: 0.03em;
-    }
-
-    .subtitle {
-      color: var(--muted);
-      font-size: 0.9rem;
-      margin-bottom: 18px;
-    }
-
-    .nav {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-bottom: 12px;
-    }
-
-    .nav a {
-      font-size: 0.78rem;
-      color: var(--muted);
-      text-decoration: none;
-      padding: 4px 9px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.04);
-      background: rgba(0, 0, 0, 0.2);
-    }
-
-    .nav a:hover {
-      color: var(--text);
-      border-color: rgba(255, 255, 255, 0.14);
-    }
-
-    .field {
-      margin-bottom: 16px;
-    }
-
-    .label {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin-bottom: 6px;
-    }
-
-    .label span.main {
-      color: var(--text);
-      font-size: 0.95rem;
-      font-weight: 500;
-    }
-
-    select,
-    input[type="number"],
-    input[type="date"] {
-      width: 100%;
-      padding: 10px 11px;
-      border-radius: 10px;
-      border: 1px solid var(--border);
-      background: #0b1522;
-      color: var(--text);
-      font-size: 0.95rem;
-      outline: none;
-      transition: border 0.15s, box-shadow 0.15s, background 0.15s;
-    }
-
-    select:focus,
-    input:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 1px rgba(46, 204, 113, 0.5);
-    }
-
-    button {
-      padding: 11px 14px;
-      border-radius: 999px;
-      border: none;
-      font-weight: 600;
-      font-size: 0.98rem;
-      cursor: pointer;
-      transform: translateY(0);
-      transition: transform 0.12s, box-shadow 0.12s, filter 0.12s, background 0.12s, color 0.12s;
-    }
-
-    .btn-primary {
-      width: 100%;
-      margin-top: 4px;
-      background: linear-gradient(135deg, #2ecc71, #27ae60);
-      color: #02120a;
-      box-shadow: 0 12px 30px rgba(46, 204, 113, 0.45);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 16px 40px rgba(46, 204, 113, 0.6);
-      filter: brightness(1.03);
-    }
-
-    .btn-primary:active {
-      transform: translateY(0);
-      box-shadow: 0 10px 26px rgba(46, 204, 113, 0.4);
-    }
-
-    .share-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      align-items: center;
-      margin-top: 14px;
-    }
-
-    .btn-share {
-      background: #0b1522;
-      color: var(--muted);
-      border: 1px solid var(--border);
-      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
-      font-size: 0.9rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding-inline: 16px;
-    }
-
-    .btn-share:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
-      background: #0f1927;
-      color: var(--text);
-    }
-
-    .btn-share span.icon {
-      font-size: 1.1rem;
-    }
-
-    .share-status {
-      font-size: 0.78rem;
-      color: var(--muted);
-    }
-
-    .share-status.success {
-      color: #7bd88f;
-    }
-
-    .share-status.error {
-      color: var(--error);
-    }
-
-    .result-header {
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--muted);
-      margin-bottom: 6px;
-    }
-
-    .result-main {
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
-    .result-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      font-size: 0.8rem;
-      margin-bottom: 8px;
-    }
-
-    .result-pill span.dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--accent);
-    }
-
-    .result-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
-      margin-top: 10px;
-    }
-
-    .result-box {
-      padding: 10px 11px;
-      border-radius: 12px;
-      border: 1px dashed var(--border);
-      font-size: 0.85rem;
-    }
-
-    .result-label {
-      color: var(--muted);
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      margin-bottom: 4px;
-    }
-
-    .result-value {
-      font-weight: 600;
-    }
-
-    small.note {
-      display: block;
-      margin-top: 10px;
-      font-size: 0.78rem;
-      color: var(--muted);
-    }
-
-    .error {
-      color: var(--error);
-      font-size: 0.8rem;
-      margin-top: 6px;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 8px;
-      border-radius: 999px;
-      background: #0b1522;
-      border: 1px solid var(--border);
-      font-size: 0.75rem;
-      color: var(--muted);
-      margin-bottom: 10px;
-    }
-
-    .badge span {
-      font-size: 1.05rem;
-    }
-
-    aside h2 {
-      font-size: 1.1rem;
-      margin: 0 0 10px;
-    }
-
-    aside p {
-      font-size: 0.85rem;
-      color: var(--muted);
-      line-height: 1.5;
-    }
-
-    aside ul {
-      padding-left: 18px;
-      margin: 6px 0 10px;
-    }
-
-    aside li {
-      font-size: 0.82rem;
-      color: var(--muted);
-      margin-bottom: 4px;
-    }
-
-    .table-wrap {
-      margin-top: 12px;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      overflow: hidden;
-      background: #0b1522;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.78rem;
-    }
-
-    th,
-    td {
-      padding: 6px 8px;
-      text-align: left;
-    }
-
-    th {
-      background: #0f1a29;
-      color: var(--muted);
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    tbody tr:nth-child(even) {
-      background: #0d1725;
-    }
-
-    tbody tr:nth-child(odd) {
-      background: #09111c;
-    }
-
-    footer {
-      margin-top: 12px;
-      font-size: 0.75rem;
-      color: var(--muted);
-    }
-
-    .ad-slot {
-      margin: 14px 0;
-      padding: 10px;
-      border-radius: 12px;
-      border: 1px dashed #25344a;
-      font-size: 0.78rem;
-      text-align: center;
-      color: var(--muted);
-    }
-  </style>
-
-  <!-- JSON-LD: WebSite + Organization + FAQ + Breadcrumbs -->
+  <!-- JSON-LD (Website + Organization + FAQ + Breadcrumb) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "WebSite",
-        "@id": "https://pitchcountcalculator.com/#website",
         "url": "https://pitchcountcalculator.com/",
         "name": "PitchCountCalculator.com",
-        "description": "Youth baseball pitch count calculator and pitching safety tools.",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://pitchcountcalculator.com/?q={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
+        "description": "Youth baseball pitch count calculator and pitching safety tools."
       },
       {
         "@type": "Organization",
-        "@id": "https://pitchcountcalculator.com/#organization",
         "name": "PitchCountCalculator.com",
         "url": "https://pitchcountcalculator.com/",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://pitchcountcalculator.com/og-image.png"
-        }
+        "logo": "https://pitchcountcalculator.com/og-image.png"
       },
       {
         "@type": "WebPage",
-        "@id": "https://pitchcountcalculator.com/#webpage",
         "url": "https://pitchcountcalculator.com/",
         "name": "Youth Baseball Pitch Count Calculator",
-        "isPartOf": { "@id": "https://pitchcountcalculator.com/#website" },
         "description": "Youth baseball pitch count and rest day calculator based on Little League style limits."
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://pitchcountcalculator.com/"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How many pitches can my child throw in a game?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Most youth leagues use pitch count limits based on age. Common Little League style limits are 50 pitches for ages 7-8, 75 pitches for ages 9-10, 85 pitches for ages 11-12, and 95 pitches for ages 13-16. Always confirm with your local league."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How many days of rest are required after pitching?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Typical Little League style rules require 0 to 4 days of rest depending on pitches thrown. For ages 14 and under, 1-20 pitches usually require 0 days of rest, 21-35 require 1 day, 36-50 require 2 days, 51-65 require 3 days, and 66+ require 4 days of rest. Check your league's official rulebook."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is this pitch count calculator official?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No. This tool is for quick guidance only and is based on common youth baseball pitch count and rest charts. Always follow your league's official rules and any medical guidance."
-            }
-          }
-        ]
       }
     ]
   }
   </script>
+
+<style>
+/* GLOBAL THEME */
+:root {
+  --bg: #0b1724;
+  --card: #101c2b;
+  --accent: #2ecc71;
+  --accent-soft: rgba(46, 204, 113, 0.15);
+  --text: #f5f7fb;
+  --muted: #a3b3cc;
+  --border: #1f2a3a;
+  --error: #ff6b6b;
+  --shadow: 0 18px 45px rgba(0,0,0,0.55);
+}
+
+/* Basic Layout */
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #18283e, #050910 55%);
+  color: var(--text);
+  padding: 24px;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  gap: 24px;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 18px;
+  padding: 24px 22px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+/* NAV */
+.nav {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.nav a {
+  font-size: 0.78rem;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 4px 9px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+/* FORM */
+input, select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: #0b1522;
+  color: var(--text);
+}
+
+/* CALCULATE BUTTON */
+.btn-primary {
+  width: 100%;
+  padding: 12px;
+  border-radius: 999px;
+  font-weight: bold;
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  color: #02120a;
+  box-shadow: 0 12px 30px rgba(46,204,113,0.45);
+  border: none;
+}
+
+/* SHARE BUTTON */
+.btn-share {
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: #0b1522;
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+
+/* AD SLOT */
+.ad-slot {
+  margin: 14px 0;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px dashed #25344a;
+  color: var(--muted);
+}
+
+/* FLOATING PITCH COUNTER */
+#floatingCounter {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #0d1725f0;
+  border-top: 1px solid var(--border);
+  box-shadow: 0 -2px 25px rgba(0,0,0,0.5);
+  padding: 10px 16px 16px;
+  backdrop-filter: blur(8px);
+  z-index: 999;
+}
+
+#floatingCounter h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  text-align: center;
+  color: var(--text);
+}
+
+/* iOS pill buttons */
+.counter-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.counter-btn {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #18283d;
+  border: 2px solid var(--accent);
+  font-size: 1.7rem;
+  color: var(--accent);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.counter-display {
+  min-width: 70px;
+  font-size: 1.6rem;
+  text-align: center;
+  font-weight: bold;
+  color: var(--text);
+}
+
+/* Calculate Now button */
+.counter-calc {
+  margin-top: 10px;
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  color: #02120a;
+  box-shadow: 0 8px 20px rgba(46,204,113,0.45);
+  cursor: pointer;
+}
+</style>
 </head>
+
 <body>
-  <div class="container">
-    <main class="card">
-      <div class="badge">
-        <span>⚾</span> Youth Baseball Pitch Count Calculator
-      </div>
 
-      <nav class="nav" aria-label="Main navigation">
-        <a href="/">Calculator</a>
-        <a href="/rest-day-chart.html">Rest Day Chart</a>
-        <a href="/pitch-count-rules.html">Pitch Count Rules</a>
-        <a href="/little-league-pitching-rules.html">Little League Pitching</a>
-      </nav>
+<div class="container">
+  <main class="card">
+    <h1>Pitch Count & Rest Day Calculator</h1>
 
-      <h1>Youth Baseball Pitch Count &amp; Rest Day Calculator</h1>
-      <p class="subtitle">
-        Use this free youth baseball pitch count calculator to see how many pitches your player can throw today
-        and when they&rsquo;re eligible to pitch again, based on age and a Little League–style rest chart.
-      </p>
+    <nav class="nav">
+      <a href="/">Calculator</a>
+      <a href="/rest-day-chart.html">Rest Day Chart</a>
+      <a href="/pitch-count-rules.html">Pitch Count Rules</a>
+      <a href="/little-league-pitching-rules.html">Little League Pitching</a>
+    </nav>
 
-      <form id="pitchForm" onsubmit="event.preventDefault(); calculate();">
-        <div class="field">
-          <div class="label">
-            <span class="main">League age</span>
-            <span>Used for max pitches per day</span>
-          </div>
-          <select id="ageGroup" required aria-label="Select league age">
-            <option value="">Select age</option>
-            <option value="7-8">7–8</option>
-            <option value="9-10">9–10</option>
-            <option value="11-12">11–12</option>
-            <option value="13-14">13–14</option>
-            <option value="15-16">15–16</option>
-          </select>
-        </div>
+    <form id="pitchForm" onsubmit="event.preventDefault(); calculate();">
+      <label>League Age</label>
+      <select id="ageGroup" required>
+        <option value="">Select age</option>
+        <option value="7-8">7–8</option>
+        <option value="9-10">9–10</option>
+        <option value="11-12">11–12</option>
+        <option value="13-14">13–14</option>
+        <option value="15-16">15–16</option>
+      </select>
 
-        <div class="field">
-          <div class="label">
-            <span class="main">Pitches thrown today</span>
-            <span>Include pitches thrown to live batters</span>
-          </div>
-          <input type="number" id="pitches" min="0" max="150" placeholder="e.g. 42" required aria-label="Pitches thrown today" />
-        </div>
+      <label style="margin-top:12px;">Pitches Thrown Today</label>
+      <input type="number" id="pitches" min="0" max="150" placeholder="e.g. 42" required />
 
-        <div class="field">
-          <div class="label">
-            <span class="main">Game date</span>
-            <span>Used to calculate next eligible day</span>
-          </div>
-          <input type="date" id="gameDate" aria-label="Game date" />
-        </div>
+      <label style="margin-top:12px;">Game Date</label>
+      <input type="date" id="gameDate" />
 
-        <button type="submit" class="btn-primary">Calculate safe pitch usage</button>
-        <div id="error" class="error" style="display:none;"></div>
-      </form>
+      <button class="btn-primary" style="margin-top:16px;">Calculate Safe Pitch Usage</button>
 
-      <section id="results" style="margin-top:18px; display:none;" aria-live="polite">
-        <div class="result-header">Today&rsquo;s pitching summary</div>
-        <div class="result-pill">
-          <span class="dot"></span>
-          <span id="safetyLabel">Within recommended limits</span>
-        </div>
-        <div class="result-main" id="mainSummary"></div>
+      <div id="error" class="error" style="margin-top:8px;color:#ff6b6b;display:none;"></div>
+    </form>
 
-        <div class="result-grid">
-          <div class="result-box">
-            <div class="result-label">Max pitches today</div>
-            <div class="result-value" id="maxPitches"></div>
-          </div>
-          <div class="result-box">
-            <div class="result-label">Pitches remaining</div>
-            <div class="result-value" id="pitchesLeft"></div>
-          </div>
-          <div class="result-box">
-            <div class="result-label">Required days of rest</div>
-            <div class="result-value" id="daysRest"></div>
-          </div>
-          <div class="result-box">
-            <div class="result-label">Next eligible day to pitch</div>
-            <div class="result-value" id="nextDay"></div>
-          </div>
-        </div>
+    <section id="results" style="display:none;margin-top:20px;">
+      <h3 id="mainSummary"></h3>
+      <p><strong>Max pitches today:</strong> <span id="maxPitches"></span></p>
+      <p><strong>Pitches remaining:</strong> <span id="pitchesLeft"></span></p>
+      <p><strong>Required days of rest:</strong> <span id="daysRest"></span></p>
+      <p><strong>Next eligible day:</strong> <span id="nextDay"></span></p>
+    </section>
 
-        <small class="note">
-          This calculator uses common Little League style pitch count and rest rules for youth pitchers.
-          Always follow your league&rsquo;s official rules and any guidance from medical professionals.
-        </small>
+    <div class="ad-slot">
+      Your ad will appear here once approved.
+    </div>
+  </main>
+</div>
 
-        <div class="share-row">
-          <button type="button" id="shareBtn" class="btn-share">
-            <span class="icon">📤</span>
-            <span>Share this with your league</span>
-          </button>
-          <span id="shareStatus" class="share-status"></span>
-        </div>
-      </section>
+<!-- FLOATING COUNTER BAR -->
+<div id="floatingCounter">
+  <h3>⚾ Pitch Counter</h3>
 
-      <div class="ad-slot">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8509398148166447"
-     crossorigin="anonymous"></script>
-<!-- pitchcountresponsive -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-8509398148166447"
-     data-ad-slot="1380953321"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-      </div>
-    </main>
-
-    <aside class="card">
-      <h2>What is a pitch count calculator?</h2>
-      <p>
-        A youth baseball pitch count calculator helps coaches and parents track how many pitches a player throws
-        in a game and how much rest they need before pitching again. It turns complex pitch count charts into a
-        simple, one-screen tool.
-      </p>
-
-      <h2>Typical max pitch limits by age</h2>
-      <p>Many leagues use daily pitch limits similar to these:</p>
-
-      <div class="table-wrap">
-        <table aria-label="Typical youth baseball pitch count limits by age">
-          <thead>
-            <tr>
-              <th>League age</th>
-              <th>Max pitches / day*</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>7–8</td><td>50</td></tr>
-            <tr><td>9–10</td><td>75</td></tr>
-            <tr><td>11–12</td><td>85</td></tr>
-            <tr><td>13–16</td><td>95</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <small class="note">*Based on commonly used Little League style guidelines. Always verify with your league.</small>
-
-      <h2 style="margin-top:16px;">Rest day chart (ages 14 &amp; under)</h2>
-      <ul>
-        <li>1–20 pitches → 0 days rest</li>
-        <li>21–35 pitches → 1 day rest</li>
-        <li>36–50 pitches → 2 days rest</li>
-        <li>51–65 pitches → 3 days rest</li>
-        <li>66+ pitches → 4 days rest</li>
-      </ul>
-
-      <h2>More youth pitching resources</h2>
-      <ul>
-        <li><a href="/rest-day-chart.html">Full youth pitching rest day chart</a></li>
-        <li><a href="/pitch-count-rules.html">Youth baseball pitch count rules explained</a></li>
-        <li><a href="/little-league-pitching-rules.html">Little League style pitching overview</a></li>
-      </ul>
-
-      <footer>
-        This site is for informational purposes only and does not replace medical advice.
-        When in doubt, rest the arm.
-      </footer>
-    </aside>
+  <div class="counter-row">
+    <div class="counter-btn" id="minusBtn">−</div>
+    <div class="counter-display" id="counterDisplay">0</div>
+    <div class="counter-btn" id="plusBtn">+</div>
   </div>
 
-  <script>
-    const maxByAge = {
-      "7-8": 50,
-      "9-10": 75,
-      "11-12": 85,
-      "13-14": 95,
-      "15-16": 95
-    };
+  <button class="counter-calc" id="applyCalcBtn">Calculate Now</button>
+</div>
 
-    function restDaysUnder15(pitches) {
-      if (pitches >= 66) return 4;
-      if (pitches >= 51) return 3;
-      if (pitches >= 36) return 2;
-      if (pitches >= 21) return 1;
-      return 0;
-    }
+<script>
+/* HAPTIC FEEDBACK */
+function vibrate(ms=20) {
+  if (navigator.vibrate) navigator.vibrate(ms);
+}
 
-    function restDays15to16(pitches) {
-      if (pitches >= 76) return 4;
-      if (pitches >= 61) return 3;
-      if (pitches >= 46) return 2;
-      if (pitches >= 31) return 1;
-      return 0;
-    }
+/* FLOATING COUNTER STATE */
+let livePitches = 0;
 
-    function formatDate(date) {
-      if (!date) return "—";
-      return date.toLocaleDateString(undefined, {
-        weekday: "short",
-        month: "short",
-        day: "numeric"
-      });
-    }
+document.getElementById("plusBtn").addEventListener("click", () => {
+  livePitches++;
+  document.getElementById("counterDisplay").textContent = livePitches;
+  vibrate();
+});
 
-    function calculate() {
-      const ageGroup = document.getElementById("ageGroup").value;
-      const pitchesInput = document.getElementById("pitches").value;
-      const gameDateInput = document.getElementById("gameDate").value;
-      const errorEl = document.getElementById("error");
+document.getElementById("minusBtn").addEventListener("click", () => {
+  if (livePitches > 0) livePitches--;
+  document.getElementById("counterDisplay").textContent = livePitches;
+  vibrate();
+});
 
-      const pitches = Number(pitchesInput);
+/* AUTOFILL + AUTO-CALC */
+document.getElementById("applyCalcBtn").addEventListener("click", () => {
+  document.getElementById("pitches").value = livePitches;
+  calculate();
 
-      errorEl.style.display = "none";
-      errorEl.textContent = "";
+  // Smooth scroll to results
+  setTimeout(() => {
+    document.getElementById("results").scrollIntoView({ behavior: "smooth" });
+  }, 150);
 
-      if (!ageGroup || isNaN(pitches) || pitches < 0) {
-        errorEl.textContent = "Please select an age and enter a valid pitch count.";
-        errorEl.style.display = "block";
-        document.getElementById("results").style.display = "none";
-        return;
-      }
+  vibrate(30);
+});
 
-      const maxPitchesToday = maxByAge[ageGroup] || 0;
+/* CALCULATOR LOGIC */
+const maxByAge = {
+  "7-8": 50,
+  "9-10": 75,
+  "11-12": 85,
+  "13-14": 95,
+  "15-16": 95
+};
 
-      if (pitches > maxPitchesToday) {
-        errorEl.textContent =
-          `This pitch count is above the typical max (${maxPitchesToday} pitches) for league age ${ageGroup}. ` +
-          "The pitcher should be removed immediately under most league rules.";
-        errorEl.style.display = "block";
-      }
+function restDaysUnder15(pitches) {
+  if (pitches >= 66) return 4;
+  if (pitches >= 51) return 3;
+  if (pitches >= 36) return 2;
+  if (pitches >= 21) return 1;
+  return 0;
+}
 
-      let daysRest;
-      if (ageGroup === "15-16") {
-        daysRest = restDays15to16(pitches);
-      } else {
-        daysRest = restDaysUnder15(pitches);
-      }
+function restDays15to16(pitches) {
+  if (pitches >= 76) return 4;
+  if (pitches >= 61) return 3;
+  if (pitches >= 46) return 2;
+  if (pitches >= 31) return 1;
+  return 0;
+}
 
-      let nextEligible = "—";
-      if (gameDateInput) {
-        const d = new Date(gameDateInput + "T00:00:00");
-        if (!isNaN(d.getTime())) {
-          d.setDate(d.getDate() + daysRest + 1);
-          nextEligible = formatDate(d);
-        }
-      }
+function calculate() {
+  const ageGroup = document.getElementById("ageGroup").value;
+  const pitches = Number(document.getElementById("pitches").value);
+  const gameDate = document.getElementById("gameDate").value;
 
-      const pitchesLeft = Math.max(0, maxPitchesToday - pitches);
+  const errorEl = document.getElementById("error");
+  errorEl.style.display = "none";
 
-      document.getElementById("maxPitches").textContent = maxPitchesToday + " pitches";
-      document.getElementById("pitchesLeft").textContent = pitchesLeft + " pitches";
-      document.getElementById("daysRest").textContent =
-        daysRest + (daysRest === 1 ? " day" : " days");
-      document.getElementById("nextDay").textContent = nextEligible;
+  if (!ageGroup || isNaN(pitches)) {
+    errorEl.textContent = "Please select an age and enter a valid pitch count.";
+    errorEl.style.display = "block";
+    return;
+  }
 
-      const safetyLabel = document.getElementById("safetyLabel");
-      const mainSummary = document.getElementById("mainSummary");
+  const maxP = maxByAge[ageGroup];
+  let daysRest = (ageGroup === "15-16")
+    ? restDays15to16(pitches)
+    : restDaysUnder15(pitches);
 
-      if (pitches > maxPitchesToday) {
-        safetyLabel.textContent = "Above recommended limit";
-        mainSummary.textContent =
-          `This outing exceeds the typical maximum of ${maxPitchesToday} pitches for league age ${ageGroup}. ` +
-          `The pitcher should rest at least ${daysRest} day(s) before throwing again.`;
-      } else if (pitches === maxPitchesToday) {
-        safetyLabel.textContent = "At maximum recommended load";
-        mainSummary.textContent =
-          `You have reached the maximum of ${maxPitchesToday} pitches for league age ${ageGroup}. ` +
-          `The pitcher should not throw any additional pitches today and should rest ${daysRest} day(s).`;
-      } else {
-        safetyLabel.textContent = "Within recommended limits";
-        mainSummary.textContent =
-          `This outing of ${pitches} pitches is within the typical ${maxPitchesToday}-pitch limit ` +
-          `for league age ${ageGroup}. The pitcher should rest ${daysRest} day(s) before their next outing.`;
-      }
+  const dateObj = new Date(gameDate + "T00:00:00");
+  dateObj.setDate(dateObj.getDate() + daysRest + 1);
 
-      document.getElementById("results").style.display = "block";
-    }
+  document.getElementById("maxPitches").textContent = maxP;
+  document.getElementById("pitchesLeft").textContent = Math.max(0, maxP - pitches);
+  document.getElementById("daysRest").textContent = daysRest;
+  document.getElementById("nextDay").textContent = isNaN(dateObj) ? "—" : dateObj.toDateString();
 
-    async function handleShare() {
-      const shareStatus = document.getElementById("shareStatus");
-      shareStatus.textContent = "";
-      shareStatus.className = "share-status";
+  document.getElementById("mainSummary").textContent =
+    `This pitcher threw ${pitches} pitches. Recommended rest: ${daysRest} day(s).`;
 
-      const url = window.location.href;
-      const title = "Youth Baseball Pitch Count Calculator";
-      const text = "Check out this simple youth baseball pitch count & rest day calculator for our league:";
+  document.getElementById("results").style.display = "block";
+}
 
-      try {
-        if (navigator.share) {
-          await navigator.share({ title, text, url });
-          shareStatus.textContent = "Link opened in your share menu.";
-          shareStatus.classList.add("success");
-        } else if (navigator.clipboard && navigator.clipboard.writeText) {
-          await navigator.clipboard.writeText(url);
-          shareStatus.textContent = "Link copied to clipboard. Paste it into your league chat or email.";
-          shareStatus.classList.add("success");
-        } else {
-          window.prompt("Copy this link and share it with your league:", url);
-          shareStatus.textContent = "Link ready to share.";
-          shareStatus.classList.add("success");
-        }
-      } catch (err) {
-        console.error(err);
-        shareStatus.textContent = "Could not share the link. Try copying the URL from your browser.";
-        shareStatus.classList.add("error");
-      }
-    }
+/* DEFAULT GAME DATE */
+document.getElementById("gameDate").value =
+  new Date().toISOString().slice(0,10);
+</script>
 
-    (function init() {
-      const gameDate = document.getElementById("gameDate");
-      const today = new Date();
-      const iso = today.toISOString().slice(0, 10);
-      gameDate.value = iso;
-
-      const shareBtn = document.getElementById("shareBtn");
-      if (shareBtn) {
-        shareBtn.addEventListener("click", handleShare);
-      }
-    })();
-  </script>
 </body>
 </html>
