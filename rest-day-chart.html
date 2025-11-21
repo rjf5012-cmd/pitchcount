@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Youth Baseball Pitching Rest Day Chart | PitchCountCalculator.com</title>
+  <meta name="description" content="Simple youth baseball pitching rest day chart that shows how many days of rest a pitcher needs based on pitches thrown in a game, following common Little League style guidelines." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="PitchCountCalculator.com" />
+  <meta name="theme-color" content="#0b1724" />
+  <link rel="canonical" href="https://pitchcountcalculator.com/rest-day-chart.html" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Youth Baseball Pitching Rest Day Chart" />
+  <meta property="og:site_name" content="PitchCountCalculator.com" />
+  <meta property="og:url" content="https://pitchcountcalculator.com/rest-day-chart.html" />
+  <meta property="og:description" content="Look up how many days of rest a youth pitcher needs after an outing using this simple rest day chart based on pitch counts." />
+  <meta property="og:image" content="https://pitchcountcalculator.com/og-image.png" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Youth Baseball Pitching Rest Day Chart" />
+  <meta name="twitter:description" content="Quick youth baseball pitching rest day chart showing required rest based on pitches thrown." />
+  <meta name="twitter:image" content="https://pitchcountcalculator.com/og-image.png" />
+
+  <!-- JSON-LD: WebPage + Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://pitchcountcalculator.com/rest-day-chart.html#webpage",
+        "url": "https://pitchcountcalculator.com/rest-day-chart.html",
+        "name": "Youth Baseball Pitching Rest Day Chart",
+        "description": "Youth baseball pitching rest day chart based on pitches thrown in a game.",
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://pitchcountcalculator.com/#website"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://pitchcountcalculator.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Rest Day Chart",
+            "item": "https://pitchcountcalculator.com/rest-day-chart.html"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #0b1724;
+      --card: #101c2b;
+      --accent: #2ecc71;
+      --accent-soft: rgba(46, 204, 113, 0.15);
+      --text: #f5f7fb;
+      --muted: #a3b3cc;
+      --border: #1f2a3a;
+      --shadow: 0 18px 45px rgba(0, 0, 0, 0.55);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #18283e, #050910 55%);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .container {
+      width: 100%;
+      max-width: 840px;
+    }
+    .card {
+      background: var(--card);
+      border-radius: 18px;
+      padding: 24px 22px 20px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: #0b1522;
+      border: 1px solid var(--border);
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+    .nav a {
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.04);
+      background: rgba(0,0,0,0.2);
+    }
+    .nav a:hover {
+      color: var(--text);
+      border-color: rgba(255,255,255,0.14);
+    }
+    h1 {
+      font-size: 1.7rem;
+      margin: 4px 0 8px;
+    }
+    .subtitle {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 18px;
+    }
+    .table-wrap {
+      margin-top: 12px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      background: #0b1522;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+    }
+    th, td {
+      padding: 8px 10px;
+      text-align: left;
+    }
+    th {
+      background: #0f1a29;
+      color: var(--muted);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.78rem;
+    }
+    tbody tr:nth-child(even) { background: #0d1725; }
+    tbody tr:nth-child(odd) { background: #09111c; }
+    p, li {
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.55;
+    }
+    ul { padding-left: 20px; }
+    footer {
+      margin-top: 14px;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+    .link-button {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, #2ecc71, #27ae60);
+      color: #02120a;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      box-shadow: 0 12px 30px rgba(46, 204, 113, 0.45);
+    }
+    .link-button:hover {
+      filter: brightness(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <main class="card">
+      <div class="badge">
+        ⚾ Youth Pitching Guide
+      </div>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a href="/">Calculator</a>
+        <a href="/rest-day-chart.html">Rest Day Chart</a>
+        <a href="/pitch-count-rules.html">Pitch Count Rules</a>
+        <a href="/little-league-pitching-rules.html">Little League Pitching</a>
+      </nav>
+
+      <h1>Youth Baseball Pitching Rest Day Chart</h1>
+      <p class="subtitle">
+        Use this youth baseball rest day chart to see how many days of rest a pitcher should get
+        after an outing, based on the number of pitches thrown.
+      </p>
+
+      <p>
+        This chart is based on common Little League–style guidelines for players age 14 and under.
+        Your league&rsquo;s official rules may differ slightly, so always check your local rulebook.
+      </p>
+
+      <div class="table-wrap">
+        <table aria-label="Youth baseball rest day chart">
+          <thead>
+            <tr>
+              <th>Pitches thrown in a day</th>
+              <th>Required days of rest</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1–20 pitches</td>
+              <td>0 days (eligible to pitch the next day)</td>
+            </tr>
+            <tr>
+              <td>21–35 pitches</td>
+              <td>1 day of rest</td>
+            </tr>
+            <tr>
+              <td>36–50 pitches</td>
+              <td>2 days of rest</td>
+            </tr>
+            <tr>
+              <td>51–65 pitches</td>
+              <td>3 days of rest</td>
+            </tr>
+            <tr>
+              <td>66+ pitches</td>
+              <td>4 days of rest</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        For players ages 15–16, many leagues use slightly higher pitch thresholds, but still require
+        up to four full days of rest after high-pitch outings. When in doubt, choose more rest rather than less.
+      </p>
+
+      <ul>
+        <li>Track pitches for the entire day, including tournament doubleheaders.</li>
+        <li>Do not allow pitchers to &ldquo;chase velocity&rdquo; when they show signs of fatigue.</li>
+        <li>Keep open communication between coaches and parents about total pitching workload.</li>
+      </ul>
+
+      <a class="link-button" href="/">Use the Pitch Count Calculator</a>
+
+      <footer>
+        This chart is a general guideline and is not medical advice. If a player reports pain, fatigue,
+        or discomfort, shut them down and consult a qualified professional before they pitch again.
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
