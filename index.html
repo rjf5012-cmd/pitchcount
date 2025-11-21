@@ -2,9 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Youth Baseball Pitch Count Calculator | Simple Rest Day Tool</title>
-  <meta name="description" content="Free youth baseball pitch count calculator that shows max pitches per game and required days of rest based on age and typical Little League style pitch count rules." />
+
+  <!-- Primary SEO -->
+  <title>Youth Baseball Pitch Count Calculator | PitchCountCalculator.com</title>
+  <meta name="description" content="Free youth baseball pitch count calculator that shows max pitches per game and required days of rest based on age and common Little League style pitch count rules. Protect young arms with a simple pitch count and rest day tool." />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="pitch count calculator,youth baseball pitch count,little league pitch count,pitch count chart,days of rest calculator,baseball pitch limits,youth pitching rules" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="PitchCountCalculator.com" />
+  <meta name="theme-color" content="#0b1724" />
+  <link rel="canonical" href="https://pitchcountcalculator.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Youth Baseball Pitch Count Calculator" />
+  <meta property="og:site_name" content="PitchCountCalculator.com" />
+  <meta property="og:url" content="https://pitchcountcalculator.com/" />
+  <meta property="og:description" content="Quickly calculate safe pitch counts and required rest days for youth baseball pitchers, based on age and common Little League style guidelines." />
+  <meta property="og:image" content="https://pitchcountcalculator.com/og-image.png" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Youth Baseball Pitch Count Calculator" />
+  <meta name="twitter:description" content="Simple youth baseball pitch count & rest day calculator. Help protect young arms with clear pitching limits and rest rules." />
+  <meta name="twitter:image" content="https://pitchcountcalculator.com/og-image.png" />
+
+  <!-- Optional: fill this with your verification when you have it -->
+  <!-- <meta name="google-site-verification" content="YOUR_CODE_HERE" /> -->
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
   <style>
     :root {
@@ -72,6 +99,28 @@
       color: var(--muted);
       font-size: 0.9rem;
       margin-bottom: 18px;
+    }
+
+    .nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+
+    .nav a {
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .nav a:hover {
+      color: var(--text);
+      border-color: rgba(255, 255, 255, 0.14);
     }
 
     .field {
@@ -143,7 +192,6 @@
       box-shadow: 0 10px 26px rgba(46, 204, 113, 0.4);
     }
 
-    /* New share button styling */
     .share-row {
       display: flex;
       flex-wrap: wrap;
@@ -351,35 +399,80 @@
     }
   </style>
 
-  <!-- Optional: JSON-LD FAQ schema for SEO -->
+  <!-- JSON-LD: WebSite + Organization + FAQ + Breadcrumbs -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
+    "@graph": [
       {
-        "@type": "Question",
-        "name": "How many pitches can my child throw in a game?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Most youth leagues use pitch count limits based on age. Common Little League style limits are 50 pitches for ages 7-8, 75 for ages 9-10, 85 for ages 11-12, and 95 for ages 13-16. Always confirm with your local league."
+        "@type": "WebSite",
+        "@id": "https://pitchcountcalculator.com/#website",
+        "url": "https://pitchcountcalculator.com/",
+        "name": "PitchCountCalculator.com",
+        "description": "Youth baseball pitch count calculator and pitching safety tools.",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://pitchcountcalculator.com/?q={search_term_string}",
+          "query-input": "required name=search_term_string"
         }
       },
       {
-        "@type": "Question",
-        "name": "How many days of rest are required after pitching?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Typical Little League style rules require 0 to 4 days of rest depending on pitches thrown. For ages 14 and under, 1-20 pitches usually require 0 days of rest, 21-35 require 1 day, 36-50 require 2 days, 51-65 require 3 days, and 66+ require 4 days of rest. Check your league's official rulebook."
+        "@type": "Organization",
+        "@id": "https://pitchcountcalculator.com/#organization",
+        "name": "PitchCountCalculator.com",
+        "url": "https://pitchcountcalculator.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://pitchcountcalculator.com/og-image.png"
         }
       },
       {
-        "@type": "Question",
-        "name": "Is this pitch count calculator official?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No. This tool is for quick guidance only and is based on common youth baseball pitch count and rest charts. Always follow your league's official rules and your coach or medical professional's advice."
-        }
+        "@type": "WebPage",
+        "@id": "https://pitchcountcalculator.com/#webpage",
+        "url": "https://pitchcountcalculator.com/",
+        "name": "Youth Baseball Pitch Count Calculator",
+        "isPartOf": { "@id": "https://pitchcountcalculator.com/#website" },
+        "description": "Youth baseball pitch count and rest day calculator based on Little League style limits."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://pitchcountcalculator.com/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How many pitches can my child throw in a game?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most youth leagues use pitch count limits based on age. Common Little League style limits are 50 pitches for ages 7-8, 75 pitches for ages 9-10, 85 pitches for ages 11-12, and 95 pitches for ages 13-16. Always confirm with your local league."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How many days of rest are required after pitching?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Typical Little League style rules require 0 to 4 days of rest depending on pitches thrown. For ages 14 and under, 1-20 pitches usually require 0 days of rest, 21-35 require 1 day, 36-50 require 2 days, 51-65 require 3 days, and 66+ require 4 days of rest. Check your league's official rulebook."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this pitch count calculator official?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. This tool is for quick guidance only and is based on common youth baseball pitch count and rest charts. Always follow your league's official rules and any medical guidance."
+            }
+          }
+        ]
       }
     ]
   }
@@ -391,10 +484,18 @@
       <div class="badge">
         <span>⚾</span> Youth Baseball Pitch Count Calculator
       </div>
-      <h1>Pitch Count &amp; Rest Day Calculator</h1>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a href="/">Calculator</a>
+        <a href="/rest-day-chart.html">Rest Day Chart</a>
+        <a href="/pitch-count-rules.html">Pitch Count Rules</a>
+        <a href="/little-league-pitching-rules.html">Little League Pitching</a>
+      </nav>
+
+      <h1>Youth Baseball Pitch Count &amp; Rest Day Calculator</h1>
       <p class="subtitle">
-        Quickly see how many pitches your player can throw today and when they&rsquo;re eligible to pitch again,
-        based on age and a Little League–style rest chart.
+        Use this free youth baseball pitch count calculator to see how many pitches your player can throw today
+        and when they&rsquo;re eligible to pitch again, based on age and a Little League–style rest chart.
       </p>
 
       <form id="pitchForm" onsubmit="event.preventDefault(); calculate();">
@@ -403,7 +504,7 @@
             <span class="main">League age</span>
             <span>Used for max pitches per day</span>
           </div>
-          <select id="ageGroup" required>
+          <select id="ageGroup" required aria-label="Select league age">
             <option value="">Select age</option>
             <option value="7-8">7–8</option>
             <option value="9-10">9–10</option>
@@ -418,7 +519,7 @@
             <span class="main">Pitches thrown today</span>
             <span>Include pitches thrown to live batters</span>
           </div>
-          <input type="number" id="pitches" min="0" max="150" placeholder="e.g. 42" required />
+          <input type="number" id="pitches" min="0" max="150" placeholder="e.g. 42" required aria-label="Pitches thrown today" />
         </div>
 
         <div class="field">
@@ -426,14 +527,14 @@
             <span class="main">Game date</span>
             <span>Used to calculate next eligible day</span>
           </div>
-          <input type="date" id="gameDate" />
+          <input type="date" id="gameDate" aria-label="Game date" />
         </div>
 
         <button type="submit" class="btn-primary">Calculate safe pitch usage</button>
         <div id="error" class="error" style="display:none;"></div>
       </form>
 
-      <section id="results" style="margin-top:18px; display:none;">
+      <section id="results" style="margin-top:18px; display:none;" aria-live="polite">
         <div class="result-header">Today&rsquo;s pitching summary</div>
         <div class="result-pill">
           <span class="dot"></span>
@@ -465,7 +566,6 @@
           Always follow your league&rsquo;s official rules and any guidance from medical professionals.
         </small>
 
-        <!-- New share section -->
         <div class="share-row">
           <button type="button" id="shareBtn" class="btn-share">
             <span class="icon">📤</span>
@@ -477,7 +577,7 @@
 
       <div class="ad-slot">
         <!-- AdSense or display ad goes here -->
-        <!-- Example:
+        <!--
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXX" crossorigin="anonymous"></script>
         <ins class="adsbygoogle"
              style="display:block"
@@ -494,14 +594,15 @@
     </main>
 
     <aside class="card">
-      <h2>Why pitch counts matter</h2>
+      <h2>What is a pitch count calculator?</h2>
       <p>
-        Keeping track of pitches is one of the simplest ways to protect a young pitcher&rsquo;s arm.
-        Little League and most youth programs limit how many pitches a player can throw in a day and
-        how many days of rest they need before pitching again.
+        A youth baseball pitch count calculator helps coaches and parents track how many pitches a player throws
+        in a game and how much rest they need before pitching again. It turns complex pitch count charts into a
+        simple, one-screen tool.
       </p>
 
-      <p>Typical max pitch limits by age look like this:</p>
+      <h2>Typical max pitch limits by age</h2>
+      <p>Many leagues use daily pitch limits similar to these:</p>
 
       <div class="table-wrap">
         <table aria-label="Typical youth baseball pitch count limits by age">
@@ -530,6 +631,13 @@
         <li>66+ pitches → 4 days rest</li>
       </ul>
 
+      <h2>More youth pitching resources</h2>
+      <ul>
+        <li><a href="/rest-day-chart.html">Full youth pitching rest day chart</a></li>
+        <li><a href="/pitch-count-rules.html">Youth baseball pitch count rules explained</a></li>
+        <li><a href="/little-league-pitching-rules.html">Little League style pitching overview</a></li>
+      </ul>
+
       <footer>
         This site is for informational purposes only and does not replace medical advice.
         When in doubt, rest the arm.
@@ -538,7 +646,6 @@
   </div>
 
   <script>
-    // Max pitches per day by age group (based on common Little League style limits)
     const maxByAge = {
       "7-8": 50,
       "9-10": 75,
@@ -547,7 +654,6 @@
       "15-16": 95
     };
 
-    // Days of rest for ages 14 and under
     function restDaysUnder15(pitches) {
       if (pitches >= 66) return 4;
       if (pitches >= 51) return 3;
@@ -556,7 +662,6 @@
       return 0;
     }
 
-    // Days of rest for ages 15-16
     function restDays15to16(pitches) {
       if (pitches >= 76) return 4;
       if (pitches >= 61) return 3;
@@ -612,7 +717,6 @@
       if (gameDateInput) {
         const d = new Date(gameDateInput + "T00:00:00");
         if (!isNaN(d.getTime())) {
-          // rest days are full days AFTER game day; eligible the following day
           d.setDate(d.getDate() + daysRest + 1);
           nextEligible = formatDate(d);
         }
@@ -649,7 +753,6 @@
       document.getElementById("results").style.display = "block";
     }
 
-    // Share logic
     async function handleShare() {
       const shareStatus = document.getElementById("shareStatus");
       shareStatus.textContent = "";
@@ -669,7 +772,6 @@
           shareStatus.textContent = "Link copied to clipboard. Paste it into your league chat or email.";
           shareStatus.classList.add("success");
         } else {
-          // Fallback: prompt user to copy manually
           window.prompt("Copy this link and share it with your league:", url);
           shareStatus.textContent = "Link ready to share.";
           shareStatus.classList.add("success");
@@ -681,7 +783,6 @@
       }
     }
 
-    // Set default game date to today and hook up share button
     (function init() {
       const gameDate = document.getElementById("gameDate");
       const today = new Date();
