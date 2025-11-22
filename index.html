@@ -270,6 +270,18 @@ input, select {
     <div class="ad-slot">
       Your ad will appear here once approved.
     </div>
+
+    <!-- NEW FOOTER FOR TRUST / ADSENSE -->
+    <footer style="margin-top:20px;font-size:0.8rem;color:#a3b3cc;text-align:center;opacity:0.9;">
+      <p style="margin:4px 0;">
+        &copy; <span id="yearSpan"></span> PitchCountCalculator.com — Youth Baseball Pitch Count &amp; Rest Day Tools
+      </p>
+      <p style="margin:4px 0;">
+        <a href="/about.html" style="color:#a3b3cc;text-decoration:none;margin:0 6px;">About</a> |
+        <a href="/privacy.html" style="color:#a3b3cc;text-decoration:none;margin:0 6px;">Privacy Policy</a> |
+        <a href="/contact.html" style="color:#a3b3cc;text-decoration:none;margin:0 6px;">Contact</a>
+      </p>
+    </footer>
   </main>
 </div>
 
@@ -381,6 +393,15 @@ function calculate() {
 /* DEFAULT GAME DATE */
 document.getElementById("gameDate").value =
   new Date().toISOString().slice(0,10);
+</script>
+
+<!-- YEAR AUTO-FILL SCRIPT -->
+<script>
+  (function () {
+    var y = new Date().getFullYear();
+    var el = document.getElementById("yearSpan");
+    if (el) el.textContent = y;
+  })();
 </script>
 
 </body>
