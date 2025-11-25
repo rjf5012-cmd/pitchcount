@@ -33,7 +33,7 @@
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-  <!-- JSON-LD (Website + Organization + FAQ + Breadcrumb) -->
+  <!-- JSON-LD (Website + Organization + WebPage) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -156,6 +156,40 @@ input, select {
   color: var(--muted);
 }
 
+/* FAQ SECTION */
+.faq-section {
+  margin-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding-top: 16px;
+}
+
+.faq-section h2 {
+  font-size: 1.1rem;
+  margin: 0 0 8px;
+}
+
+.faq-intro {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.faq-item {
+  margin-bottom: 10px;
+}
+
+.faq-question {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.faq-answer {
+  font-size: 0.86rem;
+  color: var(--muted);
+  margin-top: 2px;
+  line-height: 1.5;
+}
+
 /* FLOATING PITCH COUNTER */
 #floatingCounter {
   position: fixed;
@@ -228,7 +262,7 @@ input, select {
 
 <div class="container">
   <main class="card">
-    <h1>Pitch Count & Rest Day Calculator</h1>
+    <h1>Pitch Count &amp; Rest Day Calculator</h1>
 
     <nav class="nav">
       <a href="/">Calculator</a>
@@ -267,11 +301,47 @@ input, select {
       <p><strong>Next eligible day:</strong> <span id="nextDay"></span></p>
     </section>
 
+    <!-- FAQ SECTION -->
+    <section class="faq-section" aria-labelledby="faqHeading">
+      <h2 id="faqHeading">Pitch Count FAQ</h2>
+      <p class="faq-intro">
+        These answers are for general guidance only. Always confirm with your league&rsquo;s official rules and follow medical advice when needed.
+      </p>
+
+      <div class="faq-item">
+        <div class="faq-question">How many pitches can my child throw in one game?</div>
+        <div class="faq-answer">
+          It depends on league age. Many youth leagues use limits similar to Little League: around 50 pitches for ages 7–8, 75 for 9–10, 85 for 11–12, and 95 for 13–16. This calculator uses those style limits as a guideline.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">How do you calculate days of rest?</div>
+        <div class="faq-answer">
+          Days of rest are based on how many pitches are thrown in a single day. Higher pitch counts require more rest. After you enter age, pitches thrown, and game date, the calculator shows the recommended rest and next eligible day to pitch.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Is this tool official for my league?</div>
+        <div class="faq-answer">
+          No. This site is a helpful reference for coaches and parents, not an official rulebook. Always follow your league&rsquo;s published rules and any instructions from your board or tournament director.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Can I use this live during games?</div>
+        <div class="faq-answer">
+          Yes. The floating pitch counter at the bottom of the screen is designed for in-game use on a phone. Tap +1 for each pitch, then hit &ldquo;Calculate Now&rdquo; to run the full pitch count and rest day calculation.
+        </div>
+      </div>
+    </section>
+
     <div class="ad-slot">
       Your ad will appear here once approved.
     </div>
 
-    <!-- NEW FOOTER FOR TRUST / ADSENSE -->
+    <!-- FOOTER FOR TRUST / ADSENSE -->
     <footer style="margin-top:20px;font-size:0.8rem;color:#a3b3cc;text-align:center;opacity:0.9;">
       <p style="margin:4px 0;">
         &copy; <span id="yearSpan"></span> PitchCountCalculator.com — Youth Baseball Pitch Count &amp; Rest Day Tools
@@ -393,15 +463,13 @@ function calculate() {
 /* DEFAULT GAME DATE */
 document.getElementById("gameDate").value =
   new Date().toISOString().slice(0,10);
-</script>
 
-<!-- YEAR AUTO-FILL SCRIPT -->
-<script>
-  (function () {
-    var y = new Date().getFullYear();
-    var el = document.getElementById("yearSpan");
-    if (el) el.textContent = y;
-  })();
+/* YEAR AUTO-FILL FOR FOOTER */
+(function () {
+  var y = new Date().getFullYear();
+  var el = document.getElementById("yearSpan");
+  if (el) el.textContent = y;
+})();
 </script>
 
 </body>
