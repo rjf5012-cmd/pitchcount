@@ -116,6 +116,14 @@ body {
   border: 1px solid rgba(255,255,255,0.04);
 }
 
+/* INTRO SECTION */
+.intro-text {
+  margin-top: 8px;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
 /* FORM */
 input, select {
   width: 100%;
@@ -156,6 +164,28 @@ input, select {
   color: var(--muted);
 }
 
+/* HOW IT WORKS SECTION */
+.how-it-works {
+  margin-top: 22px;
+  padding: 14px 14px 10px;
+  border-radius: 12px;
+  background: rgba(10, 22, 38, 0.85);
+  border: 1px solid rgba(255,255,255,0.04);
+}
+.how-it-works h2 {
+  font-size: 1rem;
+  margin: 0 0 6px;
+}
+.how-it-works p,
+.how-it-works li {
+  font-size: 0.86rem;
+  color: var(--muted);
+}
+.how-it-works ul {
+  padding-left: 18px;
+  margin: 8px 0 0;
+}
+
 /* FAQ SECTION */
 .faq-section {
   margin-top: 24px;
@@ -188,6 +218,46 @@ input, select {
   color: var(--muted);
   margin-top: 2px;
   line-height: 1.5;
+}
+
+/* FEATURED GUIDES */
+.featured-guides {
+  margin-top: 22px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.featured-guides h2 {
+  font-size: 1.05rem;
+  margin: 0 0 8px;
+}
+
+.featured-guides p {
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin: 0 0 10px;
+}
+
+.featured-list {
+  display: grid;
+  gap: 10px;
+}
+
+.featured-item a {
+  display: block;
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: var(--text);
+  padding: 10px 11px;
+  border-radius: 10px;
+  background: #0b1522;
+  border: 1px solid rgba(255,255,255,0.04);
+}
+.featured-item a span {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 2px;
 }
 
 /* FLOATING PITCH COUNTER */
@@ -264,11 +334,20 @@ input, select {
   <main class="card">
     <h1>Pitch Count &amp; Rest Day Calculator</h1>
 
+    <p class="intro-text">
+      Use this simple youth baseball pitch count calculator to see how many pitches a player can safely throw in a game
+      and how many days of rest they need before pitching again. It’s designed for coaches and parents to use
+      on a phone in the dugout during live games.
+    </p>
+
     <nav class="nav">
       <a href="/">Calculator</a>
       <a href="/rest-day-chart.html">Rest Day Chart</a>
       <a href="/pitch-count-rules.html">Pitch Count Rules</a>
       <a href="/little-league-pitching-rules.html">Little League Pitching</a>
+      <a href="/youth-pitch-count-guide.html">Pitch Count Guide</a>
+      <a href="/how-many-pitches-should-my-child-throw.html">Age Breakdown</a>
+      <a href="/protecting-young-pitchers-arm.html">Pitcher Safety</a>
     </nav>
 
     <form id="pitchForm" onsubmit="event.preventDefault(); calculate();">
@@ -301,6 +380,25 @@ input, select {
       <p><strong>Next eligible day:</strong> <span id="nextDay"></span></p>
     </section>
 
+    <!-- HOW IT WORKS SECTION -->
+    <section class="how-it-works" aria-labelledby="howItWorksHeading">
+      <h2 id="howItWorksHeading">How this pitch count calculator works</h2>
+      <p>
+        This tool uses common youth baseball pitch count rules, similar to Little League and other national
+        guidelines, to help you quickly check if a pitcher is within their daily limit and how much rest they need.
+      </p>
+      <ul>
+        <li><strong>Select the player’s league age</strong> (not just school grade).</li>
+        <li><strong>Use the live pitch counter at the bottom of the screen</strong> to tap +1 for every pitch.</li>
+        <li>When the outing is over, hit <strong>&ldquo;Calculate Now&rdquo;</strong> to fill in the total and run the calculation.</li>
+        <li>Review the <strong>max pitches, pitches remaining, required days of rest,</strong> and <strong>next eligible day to pitch.</strong></li>
+      </ul>
+      <p>
+        Always follow your league’s official rules and any medical advice you receive. This calculator is a helpful guide,
+        not a replacement for your rulebook or your best judgment.
+      </p>
+    </section>
+
     <!-- FAQ SECTION -->
     <section class="faq-section" aria-labelledby="faqHeading">
       <h2 id="faqHeading">Pitch Count FAQ</h2>
@@ -311,28 +409,65 @@ input, select {
       <div class="faq-item">
         <div class="faq-question">How many pitches can my child throw in one game?</div>
         <div class="faq-answer">
-          It depends on league age. Many youth leagues use limits similar to Little League: around 50 pitches for ages 7–8, 75 for 9–10, 85 for 11–12, and 95 for 13–16. This calculator uses those style limits as a guideline.
+          It depends on league age. Many youth leagues use limits similar to Little League: around 50 pitches for ages 7–8,
+          75 for 9–10, 85 for 11–12, and 95 for 13–16. This calculator uses those style limits as a guideline. For a deeper breakdown, see
+          our <a href="/how-many-pitches-should-my-child-throw.html">age-by-age pitch count guide</a>.
         </div>
       </div>
 
       <div class="faq-item">
         <div class="faq-question">How do you calculate days of rest?</div>
         <div class="faq-answer">
-          Days of rest are based on how many pitches are thrown in a single day. Higher pitch counts require more rest. After you enter age, pitches thrown, and game date, the calculator shows the recommended rest and next eligible day to pitch.
+          Days of rest are based on how many pitches are thrown in a single day. Higher pitch counts require more rest.
+          After you enter age, pitches thrown, and game date, the calculator shows the recommended rest and next eligible
+          day to pitch. For a full explanation of rest rules, check the
+          <a href="/youth-pitch-count-guide.html">2025 Pitch Count Rules Guide</a>.
         </div>
       </div>
 
       <div class="faq-item">
         <div class="faq-question">Is this tool official for my league?</div>
         <div class="faq-answer">
-          No. This site is a helpful reference for coaches and parents, not an official rulebook. Always follow your league&rsquo;s published rules and any instructions from your board or tournament director.
+          No. This site is a helpful reference for coaches and parents, not an official rulebook. Always follow your league&rsquo;s
+          published rules and any instructions from your board or tournament director. Many leagues publish their own
+          <a href="/pitch-count-rules.html">local pitch count rules</a> you should review.
         </div>
       </div>
 
       <div class="faq-item">
         <div class="faq-question">Can I use this live during games?</div>
         <div class="faq-answer">
-          Yes. The floating pitch counter at the bottom of the screen is designed for in-game use on a phone. Tap +1 for each pitch, then hit &ldquo;Calculate Now&rdquo; to run the full pitch count and rest day calculation.
+          Yes. The floating pitch counter at the bottom of the screen is designed for in-game use on a phone. Tap +1 for each pitch,
+          then hit &ldquo;Calculate Now&rdquo; to run the full pitch count and rest day calculation. You can also refer to our
+          <a href="/protecting-young-pitchers-arm.html">guide to protecting young pitchers&rsquo; arms</a> for more safety tips.
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED GUIDES -->
+    <section class="featured-guides" aria-labelledby="featuredGuidesHeading">
+      <h2 id="featuredGuidesHeading">Featured pitch count guides</h2>
+      <p>
+        Want more than just a quick calculator? These in-depth articles explain how pitch count rules work, how many pitches kids should throw, and how to keep young arms healthy.
+      </p>
+      <div class="featured-list">
+        <div class="featured-item">
+          <a href="/youth-pitch-count-guide.html">
+            Youth Baseball Pitch Count Rules Explained (2025 Guide)
+            <span>A complete overview of age-based limits, rest rules, and common youth pitching regulations.</span>
+          </a>
+        </div>
+        <div class="featured-item">
+          <a href="/how-many-pitches-should-my-child-throw.html">
+            How Many Pitches Should My Child Throw? Age-by-Age Breakdown
+            <span>Practical pitch count ranges and examples for parents of players ages 7–16.</span>
+          </a>
+        </div>
+        <div class="featured-item">
+          <a href="/protecting-young-pitchers-arm.html">
+            How to Protect a Young Pitcher&rsquo;s Arm
+            <span>Evidence-based tips to prevent overuse, manage workload, and keep pitchers healthy.</span>
+          </a>
         </div>
       </div>
     </section>
