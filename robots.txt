@@ -1,4 +1,9 @@
+# Allow all search engines to crawl the site
 User-agent: *
 Allow: /
 
+# Explicitly disallow indexing of the privacy policy (but still accessible)
+Disallow: /privacy.html
+
+# Sitemap location
 Sitemap: https://pitchcountcalculator.com/sitemap.xml
